@@ -29,10 +29,19 @@
 
     <div class="wrapper-div" ng-controller="MainController">
         <h1>Flicker Searcher</h1>
-        <form ng-submit="search(searchTag)">
-            <div>
-                <input class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" />
+        <form name="searchForm" ng-submit="searchForm.$valid && search(searchTag)" novalidate>
+            <div ng-class="{'has-error': searchForm.searchInput.$touched && searchForm.searchInput.$invalid}">
+                <input type="text" class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" name="searchInput" required />
                 <button class="btn btn-default">Search</button>
+                <div class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
+                    <p class="error" ng-message="required"> Please provide a tag to search for...</p>
+                </div>
+                <div ng-if="searchForm.$valid && searchForm.$submitted && !pictures">
+                    <p>Searching Instangram for photos tagged with "{{searchTag}}"</p>
+                </div>
+                <div ng-if="pictures && searchTag">
+                    <p>We found {{pictures.length}} results for "{{searchTag}}"</p>
+                </div>
             </div>
         </form>
         <div class="pictures-div" ng-repeat="picture in pictures">

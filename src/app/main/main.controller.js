@@ -29,7 +29,6 @@
                 })
                 .then(function (response) {
                     $scope.pictures = response.data.photos.photo;
-                    console.log(response.data.photos.photo[0]);
                 });
         }
     }
