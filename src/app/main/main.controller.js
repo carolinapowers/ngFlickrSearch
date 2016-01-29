@@ -10,7 +10,11 @@
 
         $scope.search = function (keyword) {
 
+
             var search_tag = $scope.searchTag;
+
+            $scope.cachedSearchTag = search_tag;
+
 
             var url = 'https://api.flickr.com/services/rest';
 
