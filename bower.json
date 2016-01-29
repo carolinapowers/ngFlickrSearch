@@ -36,5 +36,20 @@
   "resolutions": {
     "jquery": "~2.1.4",
     "angular": "~1.4.2"
-  }
+  },
+  "homepage": "https://github.com/carolinapowers/ngFlickrSearch",
+  "authors": [
+    "cpowers <cpowers@DELOITTE.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
