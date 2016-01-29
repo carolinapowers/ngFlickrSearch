@@ -27,6 +27,20 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   }
 }
 
+.form-control {
+    max-width: 40%;
+    display: inline-block;
+}
+
+.wrapper-div {
+    max-width: 80%;
+    margin: 5em auto;
+    text-align: center;
+    h1 {
+        margin-bottom: 1em;
+    }
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
