@@ -33,15 +33,15 @@
         <form name="searchForm" ng-submit="searchForm.$valid && search(searchTag)" novalidate>
             <div ng-class="{'has-error': searchForm.searchInput.$touched && searchForm.searchInput.$invalid}">
                 <input type="text" class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" name="searchInput" required />
-                <button class="btn btn-default">Search</button>
+                <button class="btn btn-default" ng-click="hideMessage(); resultMessageFunc() ">Search</button>
                 <div>
                     <div class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
                         <p class="error" ng-message="required"> Please provide a tag to search for...</p>
                     </div>
-                    <div ng-if="searchForm.$valid && searchForm.$submitted && !pictures">
+                    <div ng-if="searchForm.$valid && searchForm.$submitted && searchingMessage">
                         <p>Searching Flicker for photos tagged with "{{cachedSearchTag}}"...</p>
                     </div>
-                    <div ng-if="pictures && searchTag">
+                    <div ng-if="pictures && searchTag && resultMessage && !searchingMessage">
                         <p>We found {{pictures.length}} results for "{{cachedSearchTag}}".</p>
                     </div>
                     <div if="error">

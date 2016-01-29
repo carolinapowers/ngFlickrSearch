@@ -8,6 +8,17 @@
     /** @ngInject */
     function MainController($scope, $http) {
 
+        $scope.message = false;
+        $scope.resultMessage = false;
+
+        $scope.resultMessageFunc = function () {
+            $scope.resultMessage = true;
+        }
+
+        $scope.hideMessage = function () {
+            $scope.searchingMessage = true;
+        }
+
         $scope.search = function (keyword) {
 
 
@@ -33,6 +44,7 @@
                 })
                 .then(function (response) {
                         $scope.pictures = response.data.photos.photo;
+                        $scope.searchingMessage = false;
                     },
                     function (error) {
                         $scope.error = "Ooops! Something went wrong!";
