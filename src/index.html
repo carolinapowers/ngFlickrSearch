@@ -36,12 +36,12 @@
                 <button class="btn btn-default" ng-click="hideMessage(); resultMessageFunc() ">Search</button>
                 <div>
                     <div class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
-                        <p class="error" ng-message="required"> Please provide a tag to search for...</p>
+                        <p class="error" ng-message="required">Please provide a tag to search for...</p>
                     </div>
                     <div ng-if="searchForm.$valid && searchForm.$submitted && searchingMessage">
-                        <p>Searching Flicker for photos tagged with "{{cachedSearchTag}}"...</p>
+                        <p id="search-message">Searching Flicker for photos tagged with "{{cachedSearchTag}}"...</p>
                     </div>
-                    <div ng-if="pictures && searchTag && resultMessage && !searchingMessage">
+                    <div ng-if="pictures && searchTag && !searchingMessage">
                         <p>We found {{pictures.length}} results for "{{cachedSearchTag}}".</p>
                     </div>
                     <div if="error">
