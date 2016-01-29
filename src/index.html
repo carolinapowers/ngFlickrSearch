@@ -38,12 +38,11 @@
                         <p class="error" ng-message="required"> Please provide a tag to search for...</p>
                     </div>
                     <div ng-if="searchForm.$valid && searchForm.$submitted && !pictures">
-                        <p>Searching Instangram for photos tagged with "{{searchTag}}".</p>
+                        <p>Searching Instangram for photos tagged with "{{searchTag}}"...</p>
                     </div>
                     <div ng-if="pictures && searchTag">
-                        <p>We found {{pictures.length}} results for "{{searchTag}}."</p>
+                        <p>We found {{pictures.length}} results for "{{searchTag}}".</p>
                     </div>
-
                 </div>
         </form>
         <div class=" col-md-4 pictures-div" ng-repeat="picture in pictures">
