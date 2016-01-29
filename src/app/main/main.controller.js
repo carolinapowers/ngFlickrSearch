@@ -28,8 +28,11 @@
                     params: params
                 })
                 .then(function (response) {
-                    $scope.pictures = response.data.photos.photo;
-                });
+                        $scope.pictures = response.data.photos.photo;
+                    },
+                    function (error) {
+                        $scope.error = "Ooops! Something went wrong!";
+                    });
         }
     }
 })();
