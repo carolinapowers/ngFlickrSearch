@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="flickr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>flickr</title>
     <meta name="description" content="">
@@ -18,22 +19,27 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
-  </head>
-  <body>
+</head>
+
+<body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    
-   <div class="wrapper-div">
+
+    <div class="wrapper-div" ng-controller="MainController">
         <h1>Flicker Searcher</h1>
-        <form>
-        <div >
-            <input  class="form-control" placeholder="Enter a tag to search for"/>
-            <button class="btn btn-default">Search</button>
-        </div>
+        <form ng-submit="search(searchTag)">
+            <div>
+                <input class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" />
+                <button class="btn btn-default">Search</button>
+            </div>
         </form>
-    </div><!--wrapper-div-->
+        <div class="pictures-div" ng-repeat="picture in pictures">
+
+        </div>
+    </div>
+    <!--wrapper-div-->
 
 
     <!-- build:js(src) scripts/vendor.js -->
@@ -52,5 +58,6 @@
     <!-- endinject -->
     <!-- endbuild -->
 
-  </body>
+</body>
+
 </html>
