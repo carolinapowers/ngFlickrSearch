@@ -64,21 +64,25 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 
 [ng-repeat].ng-enter {
     /* standard transition code */
+    -webkit-transition: 1s linear all;
     transition: 1s linear all;
     transform: translate3d(-150px, 0, 0);
-    opacity: 0;
 }
 
-[ng-repeat].ng-enter-stagger {    
-    transition-delay: 1ms;
-    transition-duration: 0s;
-}
 
+/*get back to it some other time*/
+
+//[ng-repeat].ng-enter-stagger {
+//    -webkit-transition-delay: 3ms;
+//    transition-delay: 0.2s;
+//    transition-duration: 0.2s;
+//}
 [ng-repeat].ng-enter.ng-enter-active {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
+    
 }
 
+.
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
