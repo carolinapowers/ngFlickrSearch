@@ -49,8 +49,10 @@
 
                 </div>
         </form>
-        <div class="col-md-4 pictures-div" ng-repeat="picture in pictures">
-            <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}.jpg" />
+        <div masonry column-width="800">
+            <div class="masonry-picture pictures-div" ng-repeat="picture in pictures">
+                <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}.jpg" />
+            </div>
         </div>
         </div>
     </div>

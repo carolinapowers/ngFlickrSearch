@@ -52,7 +52,9 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 
 .pictures-div {
     img {
-        margin: 2em 0;
+        //margin: 2em 0;
+        max-height: 330px;
+        max-width: 330px;
     }
 }
 

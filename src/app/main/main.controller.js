@@ -15,7 +15,6 @@
 
             $scope.cachedSearchTag = search_tag;
 
-
             var url = 'https://api.flickr.com/services/rest';
 
             var params = {
