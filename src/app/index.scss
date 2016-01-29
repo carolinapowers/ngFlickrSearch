@@ -50,6 +50,16 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
     font-size: 1em;
 }
 
+.pictures-div {
+    img {
+        margin: 2em 0
+    }
+}
+
+.form-control {
+    margin-bottom: 1em !important;
+}
+
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
