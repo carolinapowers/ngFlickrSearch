@@ -2,6 +2,7 @@
  *  If you want to override some bootstrap variables, you have to change values here.
  *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
  */
+
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
@@ -9,22 +10,21 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
  */
+
 // bower:scss
 // endbower
-
 .browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 .thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
+    height: 200px;
+    img.pull-right {
+        width: 50px;
+    }
 }
 
 .form-control {
@@ -41,9 +41,49 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
     }
 }
 
+.ng-valid.ng-dirty {
+    border-color: green;
+}
+
+.error {
+    color: #E94241;
+    font-size: 1em;
+}
+
+.pictures-div {
+    img {
+        margin: 2em 0;
+        max-height: 330px;
+        max-width: 330px;
+    }
+}
+
+.form-control {
+    margin-bottom: 1em !important;
+}
+
+[ng-repeat].ng-enter {
+    /* standard transition code */
+    transition: 1s linear all;
+    transform: translate3d(-150px, 0, 0);
+    opacity: 0;
+}
+
+[ng-repeat].ng-enter-stagger {    
+    transition-delay: 1ms;
+    transition-duration: 0s;
+}
+
+[ng-repeat].ng-enter.ng-enter-active {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
  */
+
 // injector
 // endinjector

@@ -8,9 +8,24 @@
     /** @ngInject */
     function MainController($scope, $http) {
 
+        $scope.message = false;
+        $scope.resultMessage = false;
+
+        $scope.resultMessageFunc = function () {
+            $scope.resultMessage = true;
+        }
+
+        $scope.hideMessage = function () {
+            $scope.searchingMessage = true;
+        }
+
         $scope.search = function (keyword) {
 
+
             var search_tag = $scope.searchTag;
+
+            $scope.cachedSearchTag = search_tag;
+
 
             var url = 'https://api.flickr.com/services/rest';
 
@@ -28,9 +43,12 @@
                     params: params
                 })
                 .then(function (response) {
-                    $scope.pictures = response.data.photos.photo;
-                    console.log($scope.pictures = response.data.photos.photo);
-                });
+                        $scope.pictures = response.data.photos.photo;
+                        $scope.searchingMessage = false;
+                    },
+                    function (error) {
+                        $scope.error = "Ooops! Something went wrong!";
+                    });
         }
     }
 })();

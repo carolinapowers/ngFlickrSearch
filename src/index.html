@@ -6,6 +6,7 @@
     <title>flickr</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -29,15 +30,29 @@
 
     <div class="wrapper-div" ng-controller="MainController">
         <h1>Flicker Searcher</h1>
-        <form ng-submit="search(searchTag)">
-            <div>
-                <input class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" />
-                <button class="btn btn-default">Search</button>
-            </div>
-        </form>
-        <div class="pictures-div" ng-repeat="picture in pictures">
-            <img ng-src="'https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}{{picture.id}}_{{picture.secret}}.jpg'" />
+        <form name="searchForm" ng-submit="searchForm.$valid && search(searchTag)" novalidate>
+            <div ng-class="{'has-error': searchForm.searchInput.$touched && searchForm.searchInput.$invalid}">
+                <input type="text" class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" name="searchInput" required />
+                <button class="btn btn-default" ng-click="hideMessage(); resultMessageFunc() ">Search</button>
+                <div>
+                    <div class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
+                        <p class="error" ng-message="required">Please provide a tag to search for...</p>
+                    </div>
+                    <div ng-if="searchForm.$valid && searchForm.$submitted && searchingMessage">
+                        <p>Searching Flicker for photos tagged with "{{cachedSearchTag}}"...</p>
+                    </div>
+                    <div class="search-message" ng-if="pictures && searchTag && !searchingMessage">
+                        <p>We found {{pictures.length}} results for "{{cachedSearchTag}}".</p>
+                    </div>
+                    <div if="error">
+                        {{error}}
+                    </div>
 
+                </div>
+        </form>
+        <div class="col-md-4 pictures-div" ng-repeat="picture in pictures">
+            <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}.jpg" />
+        </div>
         </div>
     </div>
     <!--wrapper-div-->
@@ -62,6 +77,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-messages.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.js
 "></script>
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
 
 </body>
 
