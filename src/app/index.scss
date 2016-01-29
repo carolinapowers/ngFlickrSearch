@@ -62,15 +62,21 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
     margin-bottom: 1em !important;
 }
 
-#search-message.ng-enter {
+[ng-repeat].ng-enter {
+    /* standard transition code */
+    transition: 1s linear all;
+    transform: translate3d(-150px, 0, 0);
     opacity: 0;
-    margin-left: -200px;
-    transition: 1ms opacity, 200ms margin-left;
 }
 
-#search-message.ng-enter-active {
+[ng-repeat].ng-enter-stagger {    
+    transition-delay: 1ms;
+    transition-duration: 0s;
+}
+
+[ng-repeat].ng-enter.ng-enter-active {
+    transform: translate3d(0, 0, 0);
     opacity: 1;
-    margin-left: 0;
 }
 
 
