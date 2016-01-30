@@ -35,16 +35,16 @@
                 <input type="text" class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" name="searchInput" required />
                 <button class="btn btn-default" ng-click="hideMessage(); resultMessageFunc() ">Search</button>
                 <div>
-                    <div class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
+                    <div ng-cloak class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
                         <p class="error" ng-message="required">Please provide a tag to search for...</p>
                     </div>
-                    <div ng-if="searchForm.$valid && searchForm.$submitted && searchingMessage">
+                    <div ng-cloak ng-if="searchForm.$valid && searchForm.$submitted && searchingMessage">
                         <p>Searching Flicker for photos tagged with "{{cachedSearchTag}}"...</p>
                     </div>
-                    <div class="search-message" ng-if="pictures && searchTag && !searchingMessage">
+                    <div ng-cloak class="search-message" ng-if="pictures && searchTag && !searchingMessage">
                         <p>We found {{pictures.length}} results for "{{cachedSearchTag}}".</p>
                     </div>
-                    <div if="error">
+                    <div ng-cloak if="error">
                         {{error}}
                     </div>
 

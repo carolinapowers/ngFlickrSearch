@@ -5,7 +5,6 @@
 
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
@@ -64,22 +63,26 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 
 [ng-repeat].ng-enter {
     /* standard transition code */
+    
+    -webkit-transition: 1s linear all;
     transition: 1s linear all;
     transform: translate3d(-150px, 0, 0);
     opacity: 0;
 }
 
-[ng-repeat].ng-enter-stagger {    
-    transition-delay: 1ms;
-    transition-duration: 0s;
-}
-
+//[ng-repeat].ng-enter-stagger {
+//    -webkit-transition-delay: 200ms;
+//    transition-delay: 200ms;
+//    transition-duration: 0s;
+//}
 [ng-repeat].ng-enter.ng-enter-active {
     transform: translate3d(0, 0, 0);
     opacity: 1;
 }
 
-
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
