@@ -1,0 +1,74 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.thumbnail {
+    height: 200px;
+}
+
+.thumbnail img.pull-right {
+    width: 50px;
+}
+
+.form-control {
+    max-width: 40%;
+    display: inline-block;
+}
+
+.wrapper-div {
+    max-width: 80%;
+    margin: 5em auto;
+    text-align: center;
+}
+
+.wrapper-div h1 {
+    margin-bottom: 1em;
+}
+
+.ng-valid.ng-dirty {
+    border-color: green;
+}
+
+.error {
+    color: #E94241;
+    font-size: 1em;
+}
+
+.pictures-div img {
+    margin: 2em 0;
+    max-height: 330px;
+    max-width: 330px;
+}
+
+.form-control {
+    margin-bottom: 1em !important;
+}
+
+[ng-repeat].ng-enter {
+    /* standard transition code */
+    
+    -webkit-transition: 1s linear all;
+    transition: 1s linear all;
+    transform: translate3d(-150px, 0, 0);
+}
+/*get back to it some other time*/
+
+[ng-repeat].ng-enter.ng-enter-active {
+    transform: translate3d(0, 0, 0);
+}
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
