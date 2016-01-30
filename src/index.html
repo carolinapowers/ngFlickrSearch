@@ -39,7 +39,7 @@
                 <input type="text" class="form-control" placeholder="Enter a tag to search for" ng-model="searchTag" name="searchInput" required />
                 <button class="btn btn-default" ng-click="hideMessage(); resultMessageFunc() ">Search</button>
                 <div>
-                    <div class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
+                    <div ng-cloak class="help-block" ng-if="searchForm.$submitted" ng-messages="searchForm.searchInput.$error">
                         <p class="error" ng-message="required">Please provide a tag to search for...</p>
                     </div>
                     <div ng-cloak ng-if="searchForm.$valid && searchForm.$submitted && searchingMessage">
