@@ -61,12 +61,22 @@
     
     -webkit-transition: 1s linear all;
     transition: 1s linear all;
+    -webkit-transform: translate3d(-150px, 0, 0);
     transform: translate3d(-150px, 0, 0);
+    opacity: 0;
 }
-/*get back to it some other time*/
+/*
+//[ng-repeat].ng-enter-stagger {
+//    -webkit-transition-delay: 200ms;
+//    transition-delay: 200ms;
+//    transition-duration: 0s;
+//}
+*/
 
 [ng-repeat].ng-enter.ng-enter-active {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    opacity: 1;
 }
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
